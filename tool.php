@@ -57,11 +57,13 @@
 
 	<nav>
 		<ul class="cd-secondary-nav">
-			<li><a href="tool.php">The Tool</a></li>
+				<li><a href="tool.php">The Tool</a></li>
 			<li><a href="about.php">About</a></li>
 			<li><a href="contact.php">Contact Us</a></li>
 			<li><a href="project.php">Project</a></li>
-			<li><a href="https://login.oregonstate.edu/cas/logout">Logout</a></li>
+			<li><a href="login.php">Login</a></li>
+			<li><a href="logout.php">Logout</a></li>
+</li>
 		</ul>
 	</nav>
 
@@ -72,9 +74,13 @@
 		<h1 class="main-title">Our Food Project!</span></h1>
 	</div>
 <div class="cd-container" style="margin-top: 10rem;">
-	<h2>View Recipes Here!</h2>
+	<h2>View Recipes on this Page!</h2>
 <br></br>
-	<h3>Feel Free to Add Recipes Here!</h3>
+	<h3>Feel Free to Add Recipes!</h3>
+		<div class="cd-container">
+			<a href="addrecipe.php"><div class="read-more-btn">Add Recipes Here</div></a>
+		</div>
+
         <?php
         include("config.php");
 	   include("connect.php");
