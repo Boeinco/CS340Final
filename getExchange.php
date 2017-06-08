@@ -28,20 +28,20 @@ die('Could not connect: ' . mysql_error());
 }
 
 mysqli_select_db($conn,DB_NAME);
-$sql="SELECT * FROM Recipe WHERE RecipeName = '".$q."'";
+$sql="SELECT * FROM Exchanges WHERE ExchangeTitle = '".$q."'";
 $result = mysqli_query($conn,$sql);
 if (!$result) {
-  die("Query to show fields from recipe failed");
+  die("Query to show fields from exchanges failed");
 }
 
 while($row = mysqli_fetch_array($result)) {
 
-    echo "<h1>" . $row['RecipeName'] . "</h1>";
+    echo "<h1>" . $row['ExchangeTitle'] . "</h1>";
     echo "<h3>Posted By " . $row['Username'] . "</h3>";
-    echo "<h3>At " . $row['TimeStamp'] . "</h3>";
-    echo "<h3>Rating: " . $row['Ratings'] . "</h3><br>";
+    echo "<h3>At " . $row['StartDate'] . "</h3>";
+    echo "<h3>Until " . $row['EndDate'] . "</h3><br>";
     echo "<img src= " .$row['Picture'] . " alt=\"".$row['Picture'] ."\">";
-    echo "<h3>" . $row['Instructions'] . "</h3>";
+    echo "<h3>" . $row['Description'] . "</h3>";
 
 }
 echo "</table>";

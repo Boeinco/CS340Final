@@ -1,11 +1,3 @@
-<?php
-include('loginverify.php'); // Includes Login Script
-
-if(isset($_SESSION['login_user'])){
-header("location: tool.php");
-}
-?>
-
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
@@ -38,8 +30,7 @@ header("location: tool.php");
 			<li><a href="about.php">About</a></li>
 			<li><a href="contact.php">Contact Us</a></li>
 			<li><a href="project.php">Project</a></li>
-			<li><a href="login.php">Login</a></li>
-			<li><a href="logout.php">Logout</a></li>
+			<li><a href="https://login.oregonstate.edu/cas/logout">Logout</a></li>
 		</ul>
 	</nav>
 
@@ -50,28 +41,35 @@ header("location: tool.php");
 		<h1 class="main-title">Our Food Project!</span></h1>
 	</div>
 
-
-
-
-
-<!-- Section 1 (We are tomorrow's recipe finders) -->
-
-	<main id="more" class="cd-main-content" style="margin-top: 8rem;">
-		
-<div id="login">
-<h2>Login Form</h2>
-<form action="" method="post">
-<label>UserName :</label>
-<input id="name" name="username" placeholder="username" type="text">
-<label>Password :</label>
-<input id="password" name="password" placeholder="**********" type="password">
-<input name="submit" type="submit" value=" Login ">
-<span><?php echo $error; ?></span>
-
-</form>
+<main id="more" class="cd-main-content" style="margin-top: 8rem;">
+		<div class="cd-container">
+<h1>Posted!</h1>
 </div>
+</div>
+
+<?php	
+include("config.php");
+
+$mysqli = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
+
+if ($stmt = $mysqli->prepare("insert into Recipe(RecipeName, Username, Instructions, Picture) values(?,?,?,?)")) {
+    $RecipeName = $_REQUEST["RecipeName"];
+    $Username = $_REQUEST["Username"];
+    $Instructions = $_REQUEST["Instructions"];
+    $Picture = $_REQUEST["Picture"];
+
 	
-				
+    $stmt->bind_param("ssss", $RecipeName, $Username, $Instructions, $Picture);
+    $stmt->execute();
+
+  $stmt->close();
+} 
+else 
+{
+  printf("Error: %s\n", $mysqli->error);
+}
+
+?>
 
 
 <!-- Section 5 (Footer) -->
@@ -116,4 +114,3 @@ $(function() {
 
 </body>
 </html>
-
