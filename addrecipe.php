@@ -93,8 +93,8 @@ function checkAuth($redirectIfNeeded) {
 
 <main id="more" class="cd-main-content" style="margin-top: 8rem;">
 		<div class="cd-container">
-	<h1>Contact Us!</h1>
-	<h2>If you have any comments, concerns, questions, appraisals, if you want to just troll us, or want access to the tool without being an OSU student, send us a comment</h2>
+	<h1>Post Your Recipe!</h1>
+	<h2>Make sure to add all the form requirements!</h2>
 	<div id="contact_form" class="contact_form">
 		<form method="post" action='add_recipe_receive.php'>
 			<ul>

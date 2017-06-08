@@ -5,15 +5,59 @@ if(isset($_SESSION['login_user'])){
 header("location: tool.php");
 }
 ?>
-<!DOCTYPE html>
-<html>
+
+<!doctype html>
+<html lang="en" class="no-js">
 <head>
-<title>Login Form in PHP with Session</title>
-<link href="style2.css" rel="stylesheet" type="text/css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="shortcut icon" href="http://static.tumblr.com/1ccbc9v/sCFnc0fp4/apple-touch-icon-72x72.png">
+	
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/component.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/animated-bg.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+  	
+	<title>My Food Project</title>
 </head>
 <body>
-<div id="main">
-<h1>PHP Login Session Example</h1>
+	<header class="cd-header">
+		<div class="cd-logo"><a href="index.php"><img src="img/illu.jpg" alt="Logo"></a></div>
+
+		<div class="cd-logo"><!-- ... --></div>
+ 
+	<nav>
+		<ul class="cd-secondary-nav">
+			<li><a href="tool.php">The Tool</a></li>
+			<li><a href="about.php">About</a></li>
+			<li><a href="contact.php">Contact Us</a></li>
+			<li><a href="project.php">Project</a></li>
+			<li><a href="login.php">Login</a></li>
+			<li><a href="logout.php">Logout</a></li>
+		</ul>
+	</nav>
+
+	</header>
+
+	<div id="large-header" class="large-header">
+		<canvas id="demo-canvas"></canvas>
+		<h1 class="main-title">Our Food Project!</span></h1>
+	</div>
+
+
+
+
+
+<!-- Section 1 (We are tomorrow's recipe finders) -->
+
+	<main id="more" class="cd-main-content" style="margin-top: 8rem;">
+		
 <div id="login">
 <h2>Login Form</h2>
 <form action="" method="post">
@@ -23,38 +67,53 @@ header("location: tool.php");
 <input id="password" name="password" placeholder="**********" type="password">
 <input name="submit" type="submit" value=" Login ">
 <span><?php echo $error; ?></span>
-<?php
-$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-$table = 'Users';
-    $query = "select * from Users where Password='$password' AND Username='$username'";
-
-    $result = mysqli_query($conn, $query);
-    if (!$result) {
-        die("Query to show fields from table failed");
-    }
-    
-    $fields_num = mysqli_num_fields($result);
-    echo "<h1>Table: {$table}</h1>";
-	echo $rows;
-    echo "<table border='1'><tr>";
-    // printing table headers
-    for($i=0; $i<$fields_num; $i++) {    
-        $field = mysqli_fetch_field($result);    
-        echo "<td><b>{$field->name}</b></td>";
-    }
-    echo "</tr>\n";
-    while($row = mysqli_fetch_row($result)) {    
-        echo "<tr>";    
-        // $row is array... foreach( .. ) puts every element
-        // of $row to $cell variable    
-        foreach($row as $cell)        
-            echo "<td>$cell</td>";    
-        echo "</tr>\n";
-    }
-                ?>
 
 </form>
 </div>
-</div>
+	
+				
+
+
+<!-- Section 5 (Footer) -->
+		
+		<div class="footer">
+			<div class="footer-content">
+					<div class="footer-clmn1">© 2017 Designed and Developed by <a href="http://nourritureamende.blogspot.com/">Austin Nguyen</a></div>
+					<div class="footer-clmn2">Email: <a href="mailto:nguyenau@oregonstate.edu">nguyenau@oregonstate.edu</a></div>
+			</div>
+		</div>
+		
+	</main>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5wGdqrTcgLdOPzMbASsbiHkloxc6v2rE"></script>
+
+		<script src="js/TweenLite.min.js"></script>
+		<script src="js/EasePack.min.js"></script>
+		<script src="js/rAF.js"></script>
+		<script src="js/demo-1.js"></script>
+
+<!-- Script for smooth scrolling -->
+<script>
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+</script>
+
 </body>
 </html>
+
