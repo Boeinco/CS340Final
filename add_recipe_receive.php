@@ -43,7 +43,7 @@
 
 <main id="more" class="cd-main-content" style="margin-top: 8rem;">
 		<div class="cd-container">
-<h1>Sent!</h1>
+<h1>Posted!</h1>
 </div>
 </div>
 
