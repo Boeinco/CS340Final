@@ -34,22 +34,15 @@ if (!$result) {
   die("Query to show fields from recipe failed");
 }
 
-echo "<table>
-<tr>
-<th>Recipe Name</th>
-<th>Username</th>
-<th>Date Posted</th>
-<th>Rating</th>
-</tr>";
-
-
 while($row = mysqli_fetch_array($result)) {
-    echo "<tr>";
-    echo "<td>" . $row['RecipeName'] . "</td>";
-    echo "<td>" . $row['Username'] . "</td>";
-    echo "<td>" . $row['TimeStamp'] . "</td>";
-    echo "<td>" . $row['Ratings'] . "</td>";
-    echo "</tr>";
+
+    echo "<h1>" . $row['RecipeName'] . "</h1>";
+    echo "<h3>Posted By " . $row['Username'] . "</h3>";
+    echo "<h3>At " . $row['TimeStamp'] . "</h3>";
+    echo "<h3>Rating: " . $row['Ratings'] . "</h3><br>";
+    echo "<img src= " .$row['Picture'] . " alt=\"".$row['Picture'] ."\">";
+    echo "<h3>" . $row['Instructions'] . "</h3>";
+
 }
 echo "</table>";
 mysqli_close($conn);
