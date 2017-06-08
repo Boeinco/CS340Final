@@ -96,11 +96,13 @@ function checkAuth($redirectIfNeeded) {
 	<h1>Contact Us!</h1>
 	<h2>If you have any comments, concerns, questions, appraisals, if you want to just troll us, or want access to the tool without being an OSU student, send us a comment</h2>
 	<div id="contact_form" class="contact_form">
-		<form method="post" action='add_contact_recieve.php'>
+		<form method="post" action='add_recipe_receive.php'>
 			<ul>
-			<li><label>Name:</label> <input type="text" name="name" value="<?=htmlspecialchars(checkAuth(false)) ?>">
-			<li><label>Email:</label> <input type="text" name="email" value="<?=htmlspecialchars(checkAuth(false)) ?>">
-			<li><label>Message:</label> <textarea rows="10" cols="50" name="comment"></textarea>
+			<li><label>Recipe Name:</label> <input type="text" name="RecipeName" value="<?=htmlspecialchars(checkAuth(false)) ?>">
+			<li><label>Username:</label> <input type="text" name="Username" value="<?=htmlspecialchars(checkAuth(false)) ?>">
+			<li><label>Instructions:</label> <textarea rows="10" cols="50" name="Instructions"></textarea>
+			<li><label>PictureURL:</label> <input type="text" name="Picture" value="<?=htmlspecialchars(checkAuth(false)) ?>">
+
 			<br>
 			<input type=submit value=Send>
 			</ul>
