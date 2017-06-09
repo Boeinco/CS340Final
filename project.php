@@ -155,11 +155,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
  
 	<nav>
 		<ul class="cd-secondary-nav">
-					<li><a href="tool.php">The Tool</a></li>
+			<li><a href="tool.php">Recipes</a></li>
 			<li><a href="about.php">About</a></li>
 			<li><a href="contact.php">Contact Us</a></li>
-			<li><a href="project.php">Project</a></li>
-			<li><a href="login.php">Login</a></li>
+			<li><a href="project.php">Coming Soon</a></li>
+			<li><a href= "index.php">Sign Up</a></li>
 			<li><a href="logout.php">Logout</a></li>
 
 		</ul>

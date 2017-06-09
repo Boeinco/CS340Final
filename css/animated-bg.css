@@ -33,13 +33,15 @@ overflow: hidden;
   -ms-transform: translateX(-50%) translateY(-50%);
   -o-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  color:  
-white;
   font-size: 50px;
   font-size: 4rem;
   font-weight: 300;
   text-align: center;
-  color: rgb(255,255,255);
+  color: black;
+  text-shadow: -1px -1px 0 white,  
+    1px -1px 0 white,
+    -1px 1px 0 white,
+     1px 1px 0 white;
   letter-spacing: .05em;
   line-height: 1.5em;
 }

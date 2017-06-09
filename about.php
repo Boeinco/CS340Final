@@ -25,11 +25,11 @@
  
 	<nav>
 		<ul class="cd-secondary-nav">
-						<li><a href="tool.php">The Tool</a></li>
+			<li><a href="tool.php">Recipes</a></li>
 			<li><a href="about.php">About</a></li>
 			<li><a href="contact.php">Contact Us</a></li>
-			<li><a href="project.php">Project</a></li>
-			<li><a href="login.php">Login</a></li>
+			<li><a href="project.php">Coming Soon</a></li>
+			<li><a href= "index.php">Sign Up</a></li>
 			<li><a href="logout.php">Logout</a></li>
 
 		</ul>
@@ -70,9 +70,9 @@
 				
 						<h4>Chocolate Maker</h4>
 						<h2>Keana Kief</h2>
-						<br>Major: Computer Science Minor: Business </br>
-						<br>From Somewhere in Oregon </br>
-						<br>75% Belgian Dark</br>
+						<br>Major: Computer Science </br>
+						<br>From Eugene, Oregon </br>
+						<br>75% Belgian Dark </br>
 					</div>
 				</div>
 <br></br>

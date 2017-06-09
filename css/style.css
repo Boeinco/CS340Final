@@ -212,7 +212,11 @@ html, body {
 }
 .cd-secondary-nav a {
   display: inline-block;
-  color: white;
+  color: black;
+  text-shadow: -1px -1px 0 white,  
+    1px -1px 0 white,
+    -1px 1px 0 white,
+     1px 1px 0 white;
   text-transform: uppercase;
   font-weight: 700;
 }

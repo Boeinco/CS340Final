@@ -2,6 +2,14 @@
 include 'connectvarsEECS.php';
 	session_start();
 ?>
+<?php
+include('loginverify.php'); // Includes Login Script
+
+if(isset($_SESSION['login_user'])){
+header("location: tool.php");
+}
+?>
+
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -31,11 +39,11 @@ include 'connectvarsEECS.php';
  
 	<nav>
 		<ul class="cd-secondary-nav">
-			<li><a href="tool.php">The Tool</a></li>
+			<li><a href="tool.php">Recipes</a></li>
 			<li><a href="about.php">About</a></li>
 			<li><a href="contact.php">Contact Us</a></li>
-			<li><a href="project.php">Project</a></li>
-			<li><a href="login.php">Login</a></li>
+			<li><a href="project.php">Coming Soon</a></li>
+			<li><a href= "index.php">Sign Up</a></li>
 			<li><a href="logout.php">Logout</a></li>
 		</ul>
 	</nav>
@@ -56,16 +64,31 @@ include 'connectvarsEECS.php';
 	<main id="more" class="cd-main-content" style="margin-top: 8rem;">
 		<div class="cd-container">
 			<h4 style="color: rgb(212,175,55);">Who We Are</h4>
-			<h1>For those who don't know what to do with the things in their fridge</h1>
+			<h1>For Foodies Everywhere</h1>
 			<p>We want to help you find recipes, post recipes, or find someone else to trade with!</p>
 			
-			<a href="about.php"><div class="read-more-btn">Read More About Us</div></a>
+		<div id="login">
+			<h2>Login</h2><br>
+			<form action="" method="post">
+				<label>UserName :</label>
+				<input id="name" name="username" placeholder="username" type="text">
+				<label>Password :</label>
+				<input id="password" name="password" placeholder="**********" type="password">
+				<input name="submit" type="submit" value=" Login ">
+				<span><?php echo $error; ?></span>
+
+			</form>
 		</div>
+		<br><br><br>
+		<h4 style="color: rgb(212,175,55);">Create Account</h4>
+		<a href="signup.php"><div class="read-more-btn">Let's Get Started!</div></a>
+		<br><br>
+		<h4 style="color: rgb(212,175,55);">Or you could</h4>	
+		<a href="about.php"><div class="read-more-btn">Read More About Us</div></a>
+		</div>	
 
 		<div class="cd-container" style="margin-top: 4rem;">
-			<h4 style="color: rgb(212,175,55);">What We Do</h4>
-			<a href="signup.php"><div class="read-more-btn">Let's Get Started!</div></a>
-		</div>	
+			
 				
 
 

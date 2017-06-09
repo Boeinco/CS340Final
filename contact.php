@@ -73,11 +73,11 @@ function checkAuth($redirectIfNeeded) {
  
 	<nav>
 		<ul class="cd-secondary-nav">
-		<li><a href="tool.php">The Tool</a></li>
+			<li><a href="tool.php">Recipes</a></li>
 			<li><a href="about.php">About</a></li>
 			<li><a href="contact.php">Contact Us</a></li>
-			<li><a href="project.php">Project</a></li>
-			<li><a href="login.php">Login</a></li>
+			<li><a href="project.php">Coming Soon</a></li>
+			<li><a href= "index.php">Sign Up</a></li>
 			<li><a href="logout.php">Logout</a></li>
 
 		</ul>
@@ -94,7 +94,7 @@ function checkAuth($redirectIfNeeded) {
 <main id="more" class="cd-main-content" style="margin-top: 8rem;">
 		<div class="cd-container">
 	<h1>Contact Us!</h1>
-	<h2>If you have any comments, concerns, questions, appraisals, if you want to just troll us, or want access to the tool without being an OSU student, send us a comment</h2>
+	<h2>If you have any comments, concerns, questions, appraisals, or if you want to just troll us send us a comment</h2>
 	<div id="contact_form" class="contact_form">
 		<form method="post" action='add_contact_recieve.php'>
 			<ul>
