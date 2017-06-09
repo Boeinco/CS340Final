@@ -43,7 +43,7 @@ header("location: tool.php");
 			<li><a href="about.php">About</a></li>
 			<li><a href="contact.php">Contact Us</a></li>
 			<li><a href="project.php">Coming Soon</a></li>
-			<li><a href= "index.php">Sign Up</a></li>
+			<li><a href= "index.php">Login</a></li>
 			<li><a href="logout.php">Logout</a></li>
 		</ul>
 	</nav>
