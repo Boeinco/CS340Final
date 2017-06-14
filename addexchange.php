@@ -93,14 +93,14 @@ function checkAuth($redirectIfNeeded) {
 
 <main id="more" class="cd-main-content" style="margin-top: 8rem;">
 		<div class="cd-container">
-	<h1>Post Your Recipe!</h1>
+	<h1>Post Your Exchange!</h1>
 	<h2>Make sure to add all the form requirements!</h2>
 	<div id="contact_form" class="contact_form">
-		<form method="post" action='add_recipe_receive.php'>
+		<form method="post" action='add_exchange_receive.php'>
 			<ul>
-			<li><label>Recipe Name:</label> <input type="text" name="RecipeName" value="<?=htmlspecialchars(checkAuth(false)) ?>">
+			<li><label>Exchange Name:</label> <input type="text" name="ExchangeTitle" value="<?=htmlspecialchars(checkAuth(false)) ?>">
 			<li><label>Username:</label> <input type="text" name="Username" value="<?php echo $_SESSION['login_user']; ?>"/>
-			<li><label>Instructions:</label> <textarea rows="10" cols="50" name="Instructions"></textarea>
+			<li><label>Description:</label> <textarea rows="10" cols="50" name="Description"></textarea>
 			<li><label>PictureURL:</label> <input type="text" name="Picture" value="<?=htmlspecialchars(checkAuth(false)) ?>">
 
 			<br>
@@ -146,3 +146,4 @@ $(function() {
 
 </body>
 </html>
+
