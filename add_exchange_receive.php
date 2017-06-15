@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="shortcut icon" href="http://static.tumblr.com/1ccbc9v/sCFnc0fp4/apple-touch-icon-72x72.png">
-	
+
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="css/component.css"> <!-- Resource style -->
 	<link rel="stylesheet" href="css/animated-bg.css"> <!-- Resource style -->
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-  	
+
 	<title>My Food Project</title>
 </head>
 <body>
@@ -23,7 +23,7 @@
 		<div class="cd-logo"><a href="index.php"><img src="img/illu.jpg" alt="Logo"></a></div>
 
 		<div class="cd-logo"><!-- ... --></div>
- 
+
 	<nav>
 		<ul class="cd-secondary-nav">
 			<li><a href="tool.php">Recipes</a></li>
@@ -48,7 +48,7 @@
 </div>
 </div>
 
-<?php	
+<?php
 include("config.php");
 
 $mysqli = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
@@ -56,16 +56,16 @@ $mysqli = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
 if ($stmt = $mysqli->prepare("insert into Exchanges(ExchangeTitle, Username, Description, Picture) values(?,?,?,?)")) {
     $ExchangeTitle = $_REQUEST["ExchangeTitle"];
     $Username = $_REQUEST["Username"];
-    $Instructions = $_REQUEST["Description"];
+    $Description = $_REQUEST["Description"];
     $Picture = $_REQUEST["Picture"];
 
-	
     $stmt->bind_param("ssss", $ExchangeTitle, $Username, $Description, $Picture);
     $stmt->execute();
 
   $stmt->close();
-} 
-else 
+
+}
+else
 {
   printf("Error: %s\n", $mysqli->error);
 }
@@ -74,14 +74,14 @@ else
 
 
 <!-- Section 5 (Footer) -->
-		
+
 		<div class="footer">
 			<div class="footer-content">
-					<div class="footer-clmn1">© 2017 Designed and Developed by <a href="http://nourritureamende.blogspot.com/">Austin Nguyen</a></div>
+					<div class="footer-clmn1">ï¿½ 2017 Designed and Developed by <a href="http://nourritureamende.blogspot.com/">Austin Nguyen</a></div>
 					<div class="footer-clmn2">Email: <a href="mailto:nguyenau@oregonstate.edu">nguyenau@oregonstate.edu</a></div>
 			</div>
 		</div>
-		
+
 	</main>
 
 
@@ -115,4 +115,3 @@ $(function() {
 
 </body>
 </html>
-
