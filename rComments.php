@@ -28,22 +28,30 @@ die('Could not connect: ' . mysql_error());
 }
 
 mysqli_select_db($conn,DB_NAME);
-$sql=  "SELECT * FROM Recipe WHERE RecipeName = '".$q."'";
+$sql=  "SELECT * FROM `Recipe Comments` WHERE RecipeName  = '".$q."'";
 $result = mysqli_query($conn,$sql);
 if (!$result) {
-  die("Query to show recipe failed :(");
+  die("No comments on this recipe yet :(");
 }
-
+  echo "<br><h2> Comments </h2>";
+  echo "<table>";
 while($row = mysqli_fetch_array($result)) {
+    echo "<tr>";
+    echo "<td>";
+    echo "<h3>" . $row['Username'] . " says: </h1>";
+    echo "<h3>" . $row['TimePosted'] . "</h3>";
+    echo "<h3>Rating: " . $row['Rating'] . "</h3><br>";
 
-    echo "<h1>" . $row['RecipeName'] . "</h1>";
-    echo "<h3>Posted By " . $row['Username'] . "</h3>";
-    echo "<h3>At " . $row['TimeStamp'] . "</h3>";
-    echo "<h3>Rating: " . $row['Ratings'] . "</h3><br>";
-    echo "<img src= " .$row['Picture'] . " alt=\"".$row['Picture'] ."\">";
-    echo "<h3>" . $row['Instructions'] . "</h3>";
+    echo "</td><td>";
+
+
+    echo "<h3>" . $row['Comment'] . "</h3>";
+    //echo "<img src= " .$row['Picture'] . " alt=\"".$row['Picture'] ."\">";
+    echo "</td></tr>";
 
 }
+  echo "</table>";
+
 
 mysqli_close($conn);
 ?>
