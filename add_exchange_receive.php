@@ -63,7 +63,6 @@ if ($stmt = $mysqli->prepare("insert into Exchanges(ExchangeTitle, Username, Des
     $stmt->execute();
 
   $stmt->close();
-
 }
 else
 {
