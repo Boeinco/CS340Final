@@ -1,16 +1,3 @@
-<?php
-include 'connectvarsEECS.php';
-	session_start();
-?>
-<?php
-include('loginverify.php'); // Includes Login Script
-
-if(isset($_SESSION['login_user'])){
-header("location: tool.php");
-}
-?>
-
-
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
@@ -28,23 +15,46 @@ header("location: tool.php");
 	<link rel="stylesheet" href="css/component.css"> <!-- Resource style -->
 	<link rel="stylesheet" href="css/animated-bg.css"> <!-- Resource style -->
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-  	
-	<title>My Food Project</title>
+  	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<title>Ratio Analytics Temp Page</title>
+
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+
 </head>
+
 <body>
-	<header class="cd-header">
+    <body class="p-demo p-index">
+        <header class="cd-header">
 		<div class="cd-logo"><a href="index.php"><img src="img/illu.jpg" alt="Logo"></a></div>
 
 		<div class="cd-logo"><!-- ... --></div>
  
 	<nav>
 		<ul class="cd-secondary-nav">
-			<li><a href="tool.php">Recipes</a></li>
-			<li><a href="about.php">About</a></li>
-			<li><a href="contact.php">Contact Us</a></li>
-			<li><a href="project.php">Coming Soon</a></li>
-			<li><a href= "index.php">Login</a></li>
-			<li><a href="logout.php">Logout</a></li>
 		</ul>
 	</nav>
 
@@ -52,85 +62,213 @@ header("location: tool.php");
 
 	<div id="large-header" class="large-header">
 		<canvas id="demo-canvas"></canvas>
-		<h1 class="main-title">Our Food Project!</span></h1>
+		<h1 class="main-title">Ratio Analytics Temp Page</span></h1>
 	</div>
 
 
+<div class="row">
+
+<div class="column" style="background-color:#EEEEEA ;">
+<div class="w3-bar w3-black">
+  <button class="w3-bar-item w3-button" onclick="openratio('ratioa')">ratioa</button>
+  <button class="w3-bar-item w3-button" onclick="openratio('ratiob')">ratiob</button>
+  <button class="w3-bar-item w3-button" onclick="openratio('ratioc')">ratioc</button>
+</div>
+
+<div id="ratioa" class="w3-container ratio">
+  <h2>ratioa</h2>
+  <p>Some info can go here.</p>
+</div>
+
+<div id="ratiob" class="w3-container ratio" style="display:none">
+  <h2>ratiob</h2>
+  <p>Table can go here?</p> 
+</div>
+
+<div id="ratioc" class="w3-container ratio" style="display:none">
+  <h2>ratioc</h2>
+  <p>Other stuff can go here.</p>
+</div>
+</div>
 
 
-
-<!-- Section 1 (We are tomorrow's recipe finders) -->
-
-	<main id="more" class="cd-main-content" style="margin-top: 8rem;">
+<div class="column" style="background-color:#EEEEEA;">
+<main id="more" class="cd-main-content">
 		<div class="cd-container">
-			<h4 style="color: rgb(212,175,55);">Who We Are</h4>
-			<h1>For Foodies Everywhere</h1>
-			<p>We want to help you find recipes, post recipes, or find someone else to trade with!</p>
-			
-		<div id="login">
-			<h2>Login</h2><br>
-			<form action="" method="post">
-				<label>UserName :</label>
-				<input id="name" name="username" placeholder="username" type="text">
-				<label>Password :</label>
-				<input id="password" name="password" placeholder="**********" type="password">
-				<input name="submit" type="submit" value=" Login ">
-				<span><?php echo $error; ?></span>
+			<h1>LineChart Examples</h1>
+			<section>
+                <div id="i_linechart1" class="infoviz"></div>
+                <div id="i_linechart2" class="infoviz"></div>
+			</section>
 
-			</form>
 		</div>
-		<br><br><br>
-		<h4 style="color: rgb(212,175,55);">Create Account</h4>
-		<a href="signup.php"><div class="read-more-btn">Let's Get Started!</div></a>
-		<br><br>
-		<h4 style="color: rgb(212,175,55);">Or you could</h4>	
-		<a href="about.php"><div class="read-more-btn">Read More About Us</div></a>
-		</div>	
+</div>
 
-		<div class="cd-container" style="margin-top: 4rem;">
-			
-				
+</div>
 
-
-<!-- Section 5 (Footer) -->
-		
 		<div class="footer">
 			<div class="footer-content">
-					<div class="footer-clmn1">© 2017 Designed and Developed by <a href="http://nourritureamende.blogspot.com/">Austin Nguyen</a></div>
+					<div class="footer-clmn1">© 2017 Designed and Developed by <a href="http://nourritureamende.blogspot.com">Austin Nguyen</a></div>
 					<div class="footer-clmn2">Email: <a href="mailto:nguyenau@oregonstate.edu">nguyenau@oregonstate.edu</a></div>
 			</div>
 		</div>
-		
+
 	</main>
+   
 
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/jquery-2.1.1.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5wGdqrTcgLdOPzMbASsbiHkloxc6v2rE"></script>
-
-		<script src="js/TweenLite.min.js"></script>
-		<script src="js/EasePack.min.js"></script>
-		<script src="js/rAF.js"></script>
-		<script src="js/demo-1.js"></script>
-
-<!-- Script for smooth scrolling -->
 <script>
-$(function() {
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
+function openratio(ratio) {
+    var i;
+    var x = document.getElementsByClassName("ratio");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
     }
-  });
-});
+    document.getElementById(ratio).style.display = "block";  
+}
 </script>
+        <script src="./js/raphael.min.js"></script>
+        <script id="seajsnode" src="./js/sea.min.js"></script>
+        <script>
+            (function () {
+                'use strict';
+                /*global seajs*/
+                seajs.use([ './js/infoviz' ], function (InfoViz) {
+                    var data = [], i, j, item;
 
-</body>
+                    // Global option overwrite.
+                    InfoViz.global_option({
+                        'layout': { 'background-color': '#FFF' }
+                    });
+
+                    // LineChart.
+                    InfoViz.chart(
+                        'i_linechart1',
+                        'linechart',
+                        {
+                            'vertical_axis_name': 'Vertical',
+                            'horizontal_axis_name': 'Horizontal',
+                            'horizontal_field': 'F2',
+                            'vertical_field': 'F1',
+                            'tooltip_title': 'InfoViz {F2}, {F3}',
+                            'tooltip_content': 'Tooltip: {F2}, {F3} | {F1}',
+                            'data': {
+                                'line1': {
+                                    'name': 'Apple',
+                                    'data': [
+                                        { 'F1': 1,   'F2': 'A', 'F3': 3  },
+                                        { 'F1': 42,  'F2': 'B', 'F3': 6  },
+                                        { 'F1': 7,   'F2': 'C', 'F3': 9  },
+                                        { 'F1': 110, 'F2': 'D', 'F3': 12 }
+                                    ]
+                                },
+                                'line2': {
+                                    'name': 'Microsoft',
+                                    'data': [
+                                        { 'F1': 13, 'F2': 'A', 'F3': 15 },
+                                        { 'F1': 10, 'F2': 'B', 'F3': 12 },
+                                        { 'F1': 72, 'F2': 'C', 'F3': 9  },
+                                        { 'F1': 1,  'F2': 'D', 'F3': 3  },
+                                        { 'F1': 4,  'F2': 'E', 'F3': 6  }
+                                    ]
+                                },
+                                'line3': {
+                                    'name': 'Amazon',
+                                    'data': [
+                                        { 'F1': 19, 'F2': 'A', 'F3': 15 },
+                                        { 'F1': 20, 'F2': 'B', 'F3': 12 },
+                                        { 'F1': 11, 'F2': 'D', 'F3': 3  },
+                                        { 'F1': 42, 'F2': 'E', 'F3': 6  }
+                                    ]
+                                },
+                                'line4': {
+                                    'name': 'XYZ ratio',
+                                    'data': [
+                                        { 'F1': 29, 'F2': 'A', 'F3': 15 },
+                                        { 'F1': 70, 'F2': 'B', 'F3': 12 },
+                                        { 'F1': 42, 'F2': 'C', 'F3': 9  },
+                                        { 'F1': 51, 'F2': 'D', 'F3': 3  },
+                                        { 'F1': 22, 'F2': 'E', 'F3': 6  }
+                                    ]
+                                },
+                                'line5': {
+                                    'name': 'EXXON',
+                                    'data': [
+                                        { 'F1': 9,  'F2': 'A', 'F3': 15 },
+                                        { 'F1': 90, 'F2': 'B', 'F3': 12 },
+                                        { 'F1': 92, 'F2': 'C', 'F3': 9  },
+                                        { 'F1': 52, 'F2': 'E', 'F3': 6  }
+                                    ]
+                                }
+                            }
+                        },
+                        { 'legend': { 'margin-top': 0 } }
+                    );
+
+                    InfoViz.chart(
+                        'i_linechart2',
+                        'linechart',
+                        {
+                            'vertical_axis_name': 'Vertical',
+                            'horizontal_axis_name': 'Horizontal',
+                            'horizontal_field': 'F2',
+                            'vertical_field': 'F1',
+                            'tooltip_title': 'InfoViz {F2}, {F3}',
+                            'tooltip_content': 'Tooltip: {F2}, {F3} | {F1}',
+                            'data': {
+                                'line1': {
+                                    'name': 'Apple',
+                                    'data': [
+                                        { 'F1': 1,   'F2': 'A', 'F3': 3  },
+                                        { 'F1': 42,  'F2': 'B', 'F3': 6  },
+                                        { 'F1': 7,   'F2': 'C', 'F3': 9  },
+                                        { 'F1': 110, 'F2': 'D', 'F3': 12 }
+                                    ]
+                                },
+                                'line2': {
+                                    'name': 'Microsoft',
+                                    'data': [
+                                        { 'F1': 13, 'F2': 'A', 'F3': 15 },
+                                        { 'F1': 10, 'F2': 'B', 'F3': 12 },
+                                        { 'F1': 72, 'F2': 'C', 'F3': 9  },
+                                        { 'F1': 1,  'F2': 'D', 'F3': 3  },
+                                        { 'F1': 4,  'F2': 'E', 'F3': 6  }
+                                    ]
+                                },
+                                'line3': {
+                                    'name': 'Bitcoin',
+                                    'data': [
+                                        { 'F1': 19, 'F2': 'A', 'F3': 15 },
+                                        { 'F1': 20, 'F2': 'B', 'F3': 12 },
+                                        { 'F1': 11, 'F2': 'D', 'F3': 3  },
+                                        { 'F1': 42, 'F2': 'E', 'F3': 6  }
+                                    ]
+                                },
+                                'line4': {
+                                    'name': 'XYZ ratio',
+                                    'data': [
+                                        { 'F1': 29, 'F2': 'A', 'F3': 15 },
+                                        { 'F1': 70, 'F2': 'B', 'F3': 12 },
+                                        { 'F1': 42, 'F2': 'C', 'F3': 9  },
+                                        { 'F1': 51, 'F2': 'D', 'F3': 3  },
+                                        { 'F1': 22, 'F2': 'E', 'F3': 6  }
+                                    ]
+                                },
+                                'line5': {
+                                    'name': 'EXXON',
+                                    'data': [
+                                        { 'F1': 9,  'F2': 'A', 'F3': 15 },
+                                        { 'F1': 90, 'F2': 'B', 'F3': 12 },
+                                        { 'F1': 92, 'F2': 'C', 'F3': 9  },
+                                        { 'F1': 52, 'F2': 'E', 'F3': 6  }
+                                    ]
+                                }
+                            }
+                        },
+                        { 'legend': { 'margin-top': 0 }, 'linechart': { 'area-enabled': true } }
+                    );
+
+                            });
+            }());
+        </script>
+    </body>
 </html>

@@ -1661,6 +1661,8 @@ Footer Style
 
 -------------------------------- */
 .footer {
+        position: fixed;
+	bottom: 10px;
 	width: 100%;
 	height: 100px;
 	background-color: #EEEEEE;
